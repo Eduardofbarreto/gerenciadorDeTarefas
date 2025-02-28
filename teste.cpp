@@ -3,14 +3,13 @@
 
 int main() {
     
-    std::ofstream arquivo("tarefas.txt");
+    std::ofstream arquivo("tarefas.txt", std::ios::app);
     
     int i = 0;
     std::string descricao;
     int id1 = i++;
 
     std::cout<<"Crie sua tarefa"<<std::endl;
-    std::cin>>id1;
     arquivo << id1;
     std::cout<<"Descricao: "<<std::endl;
     std::cin>>descricao;
