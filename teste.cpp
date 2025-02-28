@@ -1,42 +1,22 @@
-#include<iostream>
-#include<string>
+#include <iostream>
+#include <fstream>  // Biblioteca para manipulação de arquivos
 
-using namespace std;
-
-class gerenciadorDeTarefas{
-    public:
-    int id;
+int main() {
+    
+    std::ofstream arquivo("tarefas.txt");
+    
+    int i = 0;
     std::string descricao;
-    bool concluida;
+    int id1 = i++;
 
-    gerenciadorDeTarefas(int id, string descricao, bool concluida){
-        this -> id = id;
-        this -> descricao = descricao;
-        this -> concluida = concluida;
-    }
+    std::cout<<"Crie sua tarefa"<<std::endl;
+    std::cin>>id1;
+    arquivo << id1;
+    std::cout<<"Descricao: "<<std::endl;
+    std::cin>>descricao;
+    arquivo << descricao;
 
-    void setDescricao(std::string descricao){
-        this -> descricao = descricao;
-    }
-    
-    
-};
-
-int main(){
-
-    int opcao;
-
-    //Menu interativo que irá aparecer para o cliente!
-    cout<<"Bem-vindo ao gerenciador de tarefas!"<<endl;
-    cout<<"\n1 - Adicionar tarefa"<<endl;
-    cout<<"2 - Listar tarefas"<<endl;
-    cout<<"3 - Concluir tarefa"<<endl;
-    cout<<"4 - Remover tarefa"<<endl;
-    cout<<"5 - Salvar e sair"<<endl;
-    cout<<"Escolha uma opcao: "<<endl;
-
-    
-    
+    std::cout<<"Tarefa salva com sucesso!!"<<std::endl;
 
     return 0;
 }
